@@ -12,7 +12,6 @@ def make_predictions(image_path: str) -> dict:
         image_path,
         imgsz=640,
         conf=0.2,
-        device=0,
         verbose=False,
     )
 
