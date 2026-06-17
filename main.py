@@ -3,7 +3,6 @@ import uuid
 from pathlib import Path
 import base64
 
-import requests
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Query, File, UploadFile
 from fastapi.responses import FileResponse
@@ -22,9 +21,9 @@ app = FastAPI()
 
 origins = [
     "http://localhost:5173",
-    "http://0.0.0.0:8000",
     "http://127.0.0.1:8000",
-    "https://floodlens-backend.onrender.com",
+    "https://floodlevel.netlify.app/",
+    
 ]
 
 app.add_middleware(
