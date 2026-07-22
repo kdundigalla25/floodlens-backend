@@ -46,3 +46,33 @@ User uploads image
 → Frontend/user provides ground line
 → Backend/frontend calculates flood waterline
 → Result is displayed on image
+
+---
+
+## Research pipeline
+
+Beyond the API, this repo contains the statewide FFE validation study —
+estimating First-Floor Elevation from Street View imagery and validating it
+against NC OneMap across all 100 North Carolina counties.
+
+- **[docs/FINDINGS.md](docs/FINDINGS.md)** — results, conclusions, limitations
+- **[docs/PIPELINE.md](docs/PIPELINE.md)** — how to run each stage, design rules
+
+**Headline:** 3,833 buildings statewide, **MAE 2.31 ft**, bias −0.17 ft.
+Error grows ~4× from coast to mountains, driven independently by terrain slope
+and inland location.
+
+### Layout
+
+| path | contents |
+|---|---|
+| `main.py` + `detect_reference.py`, `elevation.py`, `pull_streetview_image.py` | FastAPI backend (co-located by import) |
+| `pipeline/` | data pipeline, stages 1–8 |
+| `analysis/` | figures and detection QA |
+| `training/` | YOLO training (local + SLURM) |
+| `reference/` | HAZUS occupancy domain, coastline geometry |
+| `docs/`, `figures/` | write-up and generated charts |
+| `archive/` | superseded scripts and datasets |
+
+All pipeline/analysis scripts are run **from the repository root**:
+`python pipeline/compute_ffe.py --device mps`

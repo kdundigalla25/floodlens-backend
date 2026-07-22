@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-MODEL_PATH = os.getenv("MODEL_PATH", "models/best.pt")
+MODEL_PATH = os.getenv("MODEL_PATH", "models/newest.pt")
 model = YOLO(MODEL_PATH)
 
 def make_predictions(image_path: str) -> dict:

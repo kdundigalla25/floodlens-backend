@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.python-version
 
 # Virtual environments
 .venv/
@@ -22,6 +23,7 @@ dist/
 
 # Datasets
 datasets/
+datacollection/
 
 
 # Images / generated files
@@ -30,3 +32,13 @@ runs/
 
 # Large data files
 *.csv
+
+reference/
+training/
+docs/
+figures/
+archive/
+analysis/
+pipeline/
+models/new.pt
+models/old.pt
